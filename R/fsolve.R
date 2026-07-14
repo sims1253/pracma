@@ -20,7 +20,7 @@ fsolve <- function(f, x0, J = NULL,
 
     if (!is.null(J)) {
         Jun <- match.fun(J)
-        J <- function(x) J(x, ...)
+        J <- function(x) Jun(x, ...)
     } else {
         J <- function(x) jacobian(f, x)
     }

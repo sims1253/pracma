@@ -36,11 +36,11 @@ fmincon <- function(x0, fn, gr = NULL, ..., method = "SQP",
             stop("Argument 'beq' must be a vector of length(beq) = nrow(Aeq).")
     }
     if (!is.null(lb) && length(lb) != length(x0)) {
-        if (length(lb == 1)) lb <- rep(lb, length(x0))
+        if (length(lb) == 1) lb <- rep(lb, length(x0))
         else stop("Length of argument 'lb' must be equal to length(x0).")
     }
     if (!is.null(ub) && length(ub) != length(x0)) {
-        if (length(ub == 1)) ub <- rep(ub, length(x0))
+        if (length(ub) == 1) ub <- rep(ub, length(x0))
         else stop("Length of argument 'ub' must be equal to length(x0).")
     }
     

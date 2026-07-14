@@ -47,7 +47,7 @@ quadgk <- function(f, a, b, tol = .Machine$double.eps^0.5, ...) {
             return(Q15)
         } else if (abs(b-a) < 16*eps) {
             warning("Minimum step size reached; singularity possible.")
-            return(Q2)
+            return(Q15)
         } # else
 
         Q2 <- .gkadpt(f, (a+b)/2, b, tol = tol)
